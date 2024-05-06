@@ -12,12 +12,12 @@ module.exports = (sequelize) => {
         id_tache: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            foreignKey: true
+            primaryKey: true
         },
-        id_membre: {
-            type: DataTypes.INTEGER,
+        pseudo: {
+            type: DataTypes.STRING(30),
             allowNull: false,
-            foreignKey: true
+            primaryKey: true
         },
         dateAttribution: {
             type: DataTypes.DATE,

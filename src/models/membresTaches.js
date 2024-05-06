@@ -9,15 +9,15 @@ module.exports = (sequelize) => {
             primaryKey: true,
             autoIncrement: true
         },
-        id_membre: {
-            type: DataTypes.INTEGER,
+        pseudo: {
+            type: DataTypes.STRING(30),
             allowNull: false,
-            foreignKey: true
+            primaryKey: true
         },
         id_tache: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            foreignKey: true
+            primaryKey: true
         }
     }, {
         sequelize,

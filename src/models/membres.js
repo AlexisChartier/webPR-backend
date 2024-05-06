@@ -4,10 +4,10 @@ class membres extends Model{}
 
 module.exports = (sequelize) => {
     membres.init({
-        id: {
-            type: DataTypes.INTEGER,
+        pseudo: {
+            type: DataTypes.STRING(30),
             primaryKey: true,
-            autoIncrement: true
+            allowNull: false
         },
         nom: {
             type: DataTypes.STRING(30),

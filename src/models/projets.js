@@ -25,8 +25,8 @@ module.exports = (sequelize) => {
             type: DataTypes.DATE,
             allowNull: false
         },
-        id_createur: {
-            type: DataTypes.INTEGER,
+        pseudo_createur: {
+            type: DataTypes.STRING(30),
             allowNull: false,
             foreignKey: true
         }

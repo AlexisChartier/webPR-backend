@@ -14,8 +14,8 @@ module.exports = (sequelize) => {
             allowNull: false,
             foreignKey: true
         },
-        id_membre: {
-            type: DataTypes.INTEGER,
+        pseudo_membre: {
+            type: DataTypes.STRING(30),
             allowNull: false,
             foreignKey: true
         },

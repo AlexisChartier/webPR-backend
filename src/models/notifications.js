@@ -9,13 +9,13 @@ module.exports = (sequelize) => {
             primaryKey: true,
             autoIncrement: true
         },
-        id_membre: {
-            type: DataTypes.INTEGER,
+        pseudo_emetteur: {
+            type: DataTypes.STRING(30),
             allowNull: false,
             foreignKey: true
         },
-        id_destinataire: {
-            type: DataTypes.INTEGER,
+        pseudo_destinataire: {
+            type: DataTypes.STRING(30),
             allowNull: false,
             foreignKey: true
         },
