@@ -1,8 +1,27 @@
+/**
+ * Roles Controller
+ * 
+ * This controller handles CRUD operations for roles.
+ * 
+ * Methods:
+ * - getAllRoles: Retrieves all roles.
+ * - getRole: Retrieves a role by ID.
+ * - createRole: Creates a new role.
+ * - updateRole: Updates a role by ID.
+ * - deleteRole: Deletes a role by ID.
+ */
 const db = require('../models');
 const Role = db.roles;
 const utils = require('../utils');
 
 const rolesController = {
+        /**
+     * Get all roles
+     * Requête GET pour récupérer tous les rôles
+     * 
+     * @param {Object} req - Express request object
+     * @param {Object} res - Express response object
+     */
     async getAllRoles(req, res) {
         try{
             let roles = await Role.findAll();
@@ -12,6 +31,15 @@ const rolesController = {
         }
     },
 
+        /**
+     * Get role by ID
+     * Requête GET avec un paramètre 'idRole' pour récupérer un rôle spécifique
+     * 
+     * @param {Object} req - Express request object
+     * @param {Object} req.params - Request parameters
+     * @param {number} req.params.idRole - ID of the role to retrieve
+     * @param {Object} res - Express response object
+     */
     async getRole(req, res) {
         try{
             const role = await Role.findByPk(req.params.idRole);
@@ -25,6 +53,20 @@ const rolesController = {
         }
     },
 
+        /**
+     * Create a new role
+     * Requête POST avec un corps de requête contenant les informations du rôle
+     * 
+     * Request Body:
+     * {
+     *   "nom": "string"
+     * }
+     * 
+     * @param {Object} req - Express request object
+     * @param {Object} req.body - Request body
+     * @param {string} req.body.nom - Name of the role
+     * @param {Object} res - Express response object
+     */
     async createRole(req, res) {
         try{
             const role = await Role.create(req.body);
@@ -34,6 +76,15 @@ const rolesController = {
         }
     },
 
+        /**
+     * Delete a role by ID
+     * Requête DELETE avec un paramètre 'idRole' pour supprimer un rôle spécifique
+     * 
+     * @param {Object} req - Express request object
+     * @param {Object} req.params - Request parameters
+     * @param {number} req.params.idRole - ID of the role to delete
+     * @param {Object} res - Express response object
+     */
     async deleteRole(req, res) {
         try{
             const role = await Role.findByPk(req.params.idRole);
@@ -48,6 +99,22 @@ const rolesController = {
         }
     },
 
+        /**
+     * Update a role by ID
+     * Requête PUT avec un paramètre 'idRole' et un corps de requête contenant les informations à mettre à jour
+     * 
+     * Request Body:
+     * {
+     *   "nom": "string"
+     * }
+     * 
+     * @param {Object} req - Express request object
+     * @param {Object} req.params - Request parameters
+     * @param {number} req.params.idRole - ID of the role to update
+     * @param {Object} req.body - Request body
+     * @param {string} req.body.nom - Name of the role
+     * @param {Object} res - Express response object
+     */
     async updateRole(req, res) {
         try{
             const role = await Role.findByPk(req.params.idRole);
